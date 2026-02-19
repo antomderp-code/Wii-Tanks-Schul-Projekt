@@ -1,0 +1,16 @@
+if(Greenfoot.isKeyDown("i"))
+        {
+            setLocation(getX(), getY() -5);
+        }
+        if(Greenfoot.isKeyDown("k"))
+        {
+            setLocation(getX(), getY() +5);
+        }
+        if(Greenfoot.isKeyDown("j"))
+        {
+            setLocation(getX() -5, getY());
+        }
+        if(Greenfoot.isKeyDown("l"))
+        {
+            setLocation(getX() +5, getY());
+        }
