@@ -1,4 +1,20 @@
-if(Greenfoot.isKeyDown("i"))
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class fadenKreuz here.
+ * 
+ * @author (your name) 
+ * @version (19.02.2026)
+ */
+public class fadenKreuz extends Actor
+{
+    /**
+     * Act - do whatever the fadenKreuz wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("i"))
         {
             setLocation(getX(), getY() -5);
         }
@@ -14,3 +30,5 @@ if(Greenfoot.isKeyDown("i"))
         {
             setLocation(getX() +5, getY());
         }
+    }
+}
