@@ -1,0 +1,38 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class fadenKreuz here.
+ * 
+ * @author (Eric) 
+ * @version (19.02.2026)
+ */
+public class fadenKreuz2 extends Actor
+{
+    /**
+     * Das Fadenkreuz Bewgt sich nach oben, unten, links, rechts eskolidirt nicht mit gegenstände
+     * und dient zum zilen der projektiele
+     */
+    public void act()
+    {
+        //Faden kreuz nach oben bewegen
+        if(Greenfoot.isKeyDown("8"))
+        {
+            setLocation(getX(), getY() -4);
+        }
+        //Faden kreuz nach unten bewegen
+        if(Greenfoot.isKeyDown("5"))
+        {
+            setLocation(getX(), getY() +4);
+        }
+        //Faden kreuz nach links bewegen
+        if(Greenfoot.isKeyDown("4"))
+        {
+            setLocation(getX() -4, getY());
+        }
+        //Faden kreuz nach rechts bewegen
+        if(Greenfoot.isKeyDown("6"))
+        {
+            setLocation(getX() +4, getY());
+        }
+    }
+}
