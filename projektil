@@ -1,0 +1,41 @@
+public class projektil extends Actor
+{
+    public void act()
+    {
+        zerstoere();
+        fliege();
+    }
+    /**
+     * Act - do whatever the projektil wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public boolean tankyVorhanden()
+    {
+        if (getOneIntersectingObject(tanky.class)!=null)
+        {
+            return true;
+        }
+        return false;
+        }
+    public void fahre()
+    {
+        move(10);
+        tankyVorhanden();
+    }
+    public void zerstoere()
+    {
+        if (tankyVorhanden())
+        {
+            removeTouching(tanky.class);
+        }
+    }
+    public void fliege()
+    {
+         int speed = 3;
+         move(speed);
+         if (isTouching(wall.class)) 
+         { 
+         move(-speed);
+         }
+    }
+    }
