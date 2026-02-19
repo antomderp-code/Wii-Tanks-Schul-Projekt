@@ -1,0 +1,30 @@
+public class tanky2 extends tanky
+{
+    /**
+     * steuerung von spielerpanzer 2
+     * problem jpg muss um 90 grad gedreht werden
+     */
+    public void steuerung()
+    {
+        if(Greenfoot.isKeyDown("up"))
+        {
+            move(2);
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            turn(-2);
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            turn(2);
+        }
+    }
+    public void schiessen()
+    {
+        
+    }
+}
