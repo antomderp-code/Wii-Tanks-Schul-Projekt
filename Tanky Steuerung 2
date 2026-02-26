@@ -1,0 +1,29 @@
+    public void act()
+    { 
+        moveWithoutOverlap();
+    }
+    public void moveWithoutOverlap() 
+    int speed = 0;if(Greenfoot.isKeyDown("8"))
+          {
+            move(2);
+        }
+        if(Greenfoot.isKeyDown("5"))
+        {
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("4"))
+        {
+            turn(-3);
+        }
+        if(Greenfoot.isKeyDown("6"))
+        {
+            turn(3);
+        }
+    move(speed); // 1. Bewegen
+    
+    if (isTouching(wall.class)) { // 2. Prüfen, ob ein wall berührt wird
+        move(-speed); 
+        
+        
+    }
+}
