@@ -2,28 +2,30 @@
     { 
         moveWithoutOverlap();
     }
-    public void moveWithoutOverlap() {
-    int speed = 0;if(Greenfoot.isKeyDown("w"))
-          {
-            move(2);
-        }
-        if(Greenfoot.isKeyDown("s"))
-        {
-            move(-2);
-        }
-        if(Greenfoot.isKeyDown("a"))
-        {
-            turn(-3);
-        }
-        if(Greenfoot.isKeyDown("d"))
-        {
-            turn(3);
-        }
-    move(speed); // 1. Bewegen
-    
-    if (isTouching(wall.class)) { // 2. Prüfen, ob ein wall berührt wird
-        move(-5); 
-        
-        
+  public void moveWithoutOverlap() {
+    // 1. Position und Rotation merken
+    int oldX = getX();
+    int oldY = getY();
+    int oldRotation = getRotation();
+
+    // 2. Die Steuerung
+    if (Greenfoot.isKeyDown("8")) {
+        move(2);
+    }
+    if (Greenfoot.isKeyDown("5")) {
+        move(-2);
+    }
+    if (Greenfoot.isKeyDown("4")) {
+        turn(-3);
+    }
+    if (Greenfoot.isKeyDown("6")) {
+        turn(3);
+    }
+
+    // 3. Prüfen: Ob in einer Wand
+    if (isTouching(wall.class)) {
+        // if ja: Alles sofort rückgängig machen
+        setLocation(oldX, oldY);
+        setRotation(oldRotation);
     }
 }
