@@ -1,0 +1,85 @@
+/** äußere Begrenzung */  
+    for (int x = 0; x < 13; x++)
+        {
+            addObject(new wallVertikal(), x * 95 + 33, 33);
+        }    
+    
+    for (int c = 0; c < 13; c++)
+        {
+            addObject(new wallVertikal(), c * 95 + 33, 766);
+        }    
+        
+    for (int v = 13; v > 0; v--)
+        {
+            addObject(new wallHorizontal(), 33,v * 95);
+        }   
+        
+    for (int b = 13; b > 0; b--)
+        {
+            addObject(new wallHorizontal(), 1166,b * 95);
+        }   
+        
+    /** Hindernise Links */  
+        for (int n = 3; n > 0; n--)
+            {
+                addObject(new wall(), 204,n * 66 +300);
+            }  
+        
+        for (int m = 2; m > 0; m--)
+            {
+                addObject(new wall(), 270,m * 66 +188);
+            }        
+    
+        for (int m = 2; m > 0; m--)
+        {
+            addObject(new wall(), 270,m * 66 +466);
+        }  
+        
+    /** Hindernise Rechts */      
+        for (int n = 3; n > 0; n--)
+            {
+                addObject(new wall(), 996,n * 66 +300);
+            }  
+        
+        for (int m = 2; m > 0; m--)
+            {
+                addObject(new wall(), 930,m * 66 +188);
+            }        
+    
+        for (int m = 2; m > 0; m--)
+        {
+            addObject(new wall(), 930,m * 66 +466);
+        } 
+        
+        
+    /** Hindernise Oben */      
+        for (int a = 3; a > 0; a--)
+            {
+                addObject(new wall(),a*66 + 480,250);
+            }  
+        
+        for (int s = 2; s > 0; s--)
+            {
+                addObject(new wall(),s* 66 +358, 184);
+            }        
+    
+        for (int s = 2; s > 0; s--)
+        {
+            addObject(new wall(),s* 66 +649, 184);
+        } 
+        
+    /** Hindernise Unten */    
+        for (int a = 3; a > 0; a--)
+            {
+                addObject(new wall(),a*66 + 480,550);
+            }  
+        
+        for (int s = 2; s > 0; s--)
+            {
+                addObject(new wall(),s* 66 +358, 616);
+            }        
+    
+        for (int s = 2; s > 0; s--)
+        {
+            addObject(new wall(),s* 66 +649, 616);
+        } 
