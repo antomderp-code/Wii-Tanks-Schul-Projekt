@@ -1,4 +1,6 @@
-/** äußere Begrenzung */  
+    private void prepare()
+    {
+    /** äußere Begrenzung */  
     for (int x = 0; x < 13; x++)
         {
             addObject(new wallVertikal(), x * 95 + 33, 33);
@@ -22,64 +24,47 @@
     /** Hindernise Links */  
         for (int n = 3; n > 0; n--)
             {
-                addObject(new wall(), 204,n * 66 +300);
+                addObject(new wall(), 210,n * 66 +265);
             }  
         
         for (int m = 2; m > 0; m--)
             {
-                addObject(new wall(), 270,m * 66 +188);
+                addObject(new wall(), 276,m * 66 +140);
             }        
     
         for (int m = 2; m > 0; m--)
         {
-            addObject(new wall(), 270,m * 66 +466);
+            addObject(new wall(), 276,m * 66 +460);
         }  
         
     /** Hindernise Rechts */      
         for (int n = 3; n > 0; n--)
             {
-                addObject(new wall(), 996,n * 66 +300);
+                addObject(new wall(), 990,n * 66 +270);
             }  
         
         for (int m = 2; m > 0; m--)
             {
-                addObject(new wall(), 930,m * 66 +188);
+                addObject(new wall(), 924,m * 66 +145);
             }        
     
         for (int m = 2; m > 0; m--)
         {
-            addObject(new wall(), 930,m * 66 +466);
+            addObject(new wall(), 924,m * 66 +465);
         } 
         
         
     /** Hindernise Oben */      
         for (int a = 3; a > 0; a--)
             {
-                addObject(new wall(),a*66 + 480,250);
+                addObject(new wall(),a*66 + 470,250);
             }  
-        
-        for (int s = 2; s > 0; s--)
-            {
-                addObject(new wall(),s* 66 +358, 184);
-            }        
     
-        for (int s = 2; s > 0; s--)
-        {
-            addObject(new wall(),s* 66 +649, 184);
-        } 
         
     /** Hindernise Unten */    
         for (int a = 3; a > 0; a--)
             {
-                addObject(new wall(),a*66 + 480,550);
+                addObject(new wall(),a*66 + 470,550);
             }  
         
-        for (int s = 2; s > 0; s--)
-            {
-                addObject(new wall(),s* 66 +358, 616);
-            }        
-    
-        for (int s = 2; s > 0; s--)
-        {
-            addObject(new wall(),s* 66 +649, 616);
-        } 
+    }
