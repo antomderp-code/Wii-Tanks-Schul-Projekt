@@ -1,0 +1,29 @@
+    public void act()
+    { 
+        moveWithoutOverlap();
+    }
+    public void moveWithoutOverlap() {
+    int speed = 0;if(Greenfoot.isKeyDown("w"))
+          {
+            move(2);
+        }
+        if(Greenfoot.isKeyDown("s"))
+        {
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("a"))
+        {
+            turn(-3);
+        }
+        if(Greenfoot.isKeyDown("d"))
+        {
+            turn(3);
+        }
+    move(speed); // 1. Bewegen
+    
+    if (isTouching(wall.class)) { // 2. Prüfen, ob ein anderes Auto berührt wird
+        move(-speed); 
+        
+        
+    }
+}
