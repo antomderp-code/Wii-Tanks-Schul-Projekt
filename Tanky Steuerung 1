@@ -28,4 +28,14 @@
         setLocation(oldX, oldY);
         setRotation(oldRotation);
     }
+ if (isTouching(wallHorizontal.class)) {
+        // Falls ja: Alles sofort rückgängig machen!
+        setLocation(oldX, oldY);
+        setRotation(oldRotation);
+    } 
+    if (isTouching(wallVertikal.class)) {
+        // Falls ja: Alles sofort rückgängig machen!
+        setLocation(oldX, oldY);
+        setRotation(oldRotation);
+    }
 }
