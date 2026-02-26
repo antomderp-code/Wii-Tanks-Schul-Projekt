@@ -21,7 +21,7 @@
         }
     move(speed); // 1. Bewegen
     
-    if (isTouching(wall.class)) { // 2. Prüfen, ob ein anderes Auto berührt wird
+    if (isTouching(wall.class)) { // 2. Prüfen, ob ein wall berührt wird
         move(-speed); 
         
         
