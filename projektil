@@ -4,7 +4,11 @@ public class projektil extends Actor
     {
         zerstoere();
         fliege();
+        explosion();
     }
+    private Actor schuetze; 
+    
+    
     /**
      * Act - do whatever the projektil wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,11 +20,6 @@ public class projektil extends Actor
             return true;
         }
         return false;
-        }
-    public void fahre()
-    {
-        move(10);
-        tankyVorhanden();
     }
     public void zerstoere()
     {
@@ -29,13 +28,44 @@ public class projektil extends Actor
             removeTouching(tanky.class);
         }
     }
+    public boolean fadenKreuzVorhanden()
+    {
+        if (getOneIntersectingObject(fadenKreuz.class)!=null)
+        {
+            return true;
+        }
+        return false;
+    }
     public void fliege()
     {
-         int speed = 3;
+        // 1. Finde das fadenkreuz
+        Actor ziel = (fadenKreuz) getWorld().getObjects(fadenKreuz.class).get(0);
+        
+        if (ziel != null) {
+            // 2. Drehe dich zum Ziel
+            turnTowards(ziel.getX(), ziel.getY());
+        int speed = 3;
          move(speed);
-         if (isTouching(wall.class)) 
+        }
+         else if (isTouching(wall.class)) 
          { 
-         move(-speed);
+         turn(180);
          }
     }
+    public void explosion()
+    {
+        if (isTouching(wall.class))
+        {
+            getWorld().removeObject(this);
+        }
     }
+    public void getroffen()
+    {
+       Actor getroffen = getOneIntersectingObject(tanky.class);
+       if(getroffen != null && getroffen !=schuetze)
+       {
+           getWorld().removeObject(getroffen);
+           getWorld().removeObject(this);
+       }
+    }
+}
