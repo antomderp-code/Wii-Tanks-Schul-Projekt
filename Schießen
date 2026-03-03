@@ -1,0 +1,16 @@
+public void schiessen()
+{
+    if (Greenfoot.isKeyDown("space") && cooldown == 0)
+    {
+        projektil p = new projektil(this);
+
+        int x = getX() + (int)(Math.cos(Math.toRadians(getRotation())) * 50);
+        int y = getY() + (int)(Math.sin(Math.toRadians(getRotation())) * 50);
+
+        getWorld().addObject(p, x, y);
+        p.setRotation(getRotation());
+
+        cooldown = 25;
+    }
+}
+private int cooldown = 0;
