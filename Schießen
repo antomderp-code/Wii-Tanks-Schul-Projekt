@@ -1,16 +1,25 @@
-public void schiessen()
+public void schiessen() 
 {
-    if (Greenfoot.isKeyDown("space") && cooldown == 0)
+    if (Greenfoot.isKeyDown("space") && cooldown == 0) 
     {
-        projektil p = new projektil(this);
+        
+        fadenKreuz ziel = (fadenKreuz) getWorld().getObjects(fadenKreuz.class).get(0);
 
-        int x = getX() + (int)(Math.cos(Math.toRadians(getRotation())) * 50);
-        int y = getY() + (int)(Math.sin(Math.toRadians(getRotation())) * 50);
+        if (ziel != null) {
+         
+            projektil p = new projektil(this);
+            
+            
+            int x = getX();
+            int y = getY();
+            getWorld().addObject(p, x, y);
 
-        getWorld().addObject(p, x, y);
-        p.setRotation(getRotation());
+           
+            p.turnTowards(ziel.getX(), ziel.getY());
 
-        cooldown = 25;
+            
+            cooldown = 100;
+        }
     }
 }
 private int cooldown = 0;
