@@ -1,0 +1,4 @@
+if (Greenfoot.mouseClicked(this)) 
+        {
+            Greenfoot.setWorld(new Spiel());    //anstelle von Spiel den namen der neuen Welt bei euch angeben 
+        }
