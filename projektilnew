@@ -8,11 +8,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class projektil extends Actor
 {
+    private Actor schuetze;   // Wer hat geschossen?
+
+    public projektil(Actor s)
+    {
+        schuetze = s;
+    }
+
     public void act()
     {
-        zerstoere();
-        fliege();
+        move(6);
+
+        // Wand → Projektil weg
+        if (isTouching(wall.class))
+        {
+            getWorld().removeObject(this);
+        }
+
+        // Tank treffen (aber NICHT den eigenen!)
+        Actor getroffen = getOneIntersectingObject(tanky.class);
+
+        if (getroffen != null && getroffen != schuetze)
+        {
+            getWorld().removeObject(getroffen);
+            getWorld().removeObject(this);
+        }
     }
+
     /**
      * Act - do whatever the projektil wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
