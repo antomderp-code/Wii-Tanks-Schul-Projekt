@@ -1,0 +1,78 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class projektil here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class projektil extends Actor
+{
+    private Actor schuetze;   // Wer hat geschossen?
+
+    public projektil(Actor s)
+    {
+        schuetze = s;
+    }
+
+    public void act()
+    {
+        move(6);
+
+        // Wand → Projektil weg
+        if (isTouching(wall.class))
+        {
+            getWorld().removeObject(this);
+        }
+
+        // Tank treffen (aber NICHT den eigenen!)
+        Actor getroffen = getOneIntersectingObject(tanky.class);
+
+        if (getroffen != null && getroffen != schuetze)
+        {
+            getWorld().removeObject(getroffen);
+            getWorld().removeObject(this);
+        }
+    }
+
+    /**
+     * Act - do whatever the projektil wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public boolean tankyVorhanden()
+    {
+        if (getOneIntersectingObject(tanky.class)!=null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public void fahre()
+    {
+        move(10);
+        tankyVorhanden();
+    }
+    public void zerstoere()
+    {
+        if (tankyVorhanden())
+        {
+            removeTouching(tanky.class);
+        }
+    }
+    public void fliege()
+    {
+         int speed = 3;
+         move(speed);
+         if (isTouching(wall.class)) 
+         { 
+         turn(180);
+         }
+    }
+    public void explosion()
+    {
+        if (tankyVorhanden())
+        {
+            
+        }
+    }
+    }
