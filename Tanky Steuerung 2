@@ -58,7 +58,7 @@ public class tanky2 extends tanky
 }
 public void schiessen() 
 {
-    if (Greenfoot.isKeyDown("space") && cooldown == 0) 
+    if (Greenfoot.isKeyDown("0") && cooldown == 0) 
     {
         
         fadenkreuz2 ziel = (fadenkreuz2) getWorld().getObjects(fadenkreuz2.class).get(0);
