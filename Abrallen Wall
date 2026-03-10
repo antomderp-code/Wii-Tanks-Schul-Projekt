@@ -1,0 +1,22 @@
+
+Actor wand = getOneIntersectingObject(wall.class);
+    if (wand != null) 
+    {
+        
+        move(-6);
+        
+      
+        if (Math.abs(getY() - wand.getY()) > Math.abs(getX() - wand.getX())) 
+        {
+            
+            setRotation(360 - getRotation());
+        } 
+        else 
+        {
+            
+            setRotation(180 - getRotation());
+        }
+        
+        
+        move(6);
+    }
