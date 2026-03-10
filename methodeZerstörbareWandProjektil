@@ -1,0 +1,17 @@
+public boolean brakeableWallVorhanden()
+    {
+        if (getOneIntersectingObject(brakeableWall.class)!=null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public void zerstoereWall()
+    {
+        if (brakeableWallVorhanden())
+        {
+            removeTouching(brakeableWall.class);
+            getWorld().removeObject(this);
+            return;
+        }
+    }
